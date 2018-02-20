@@ -19,6 +19,8 @@ public class Runners extends SysADLStatementInterpreter{
 	@Override
 	public void run(Expression s, Map<String, Object> context) {
 		// TODO Auto-generated method stub
+		SysADLExecutionEngine a = SysADLExecutionEngine.getInstance();
+		
 		
 	}
 
