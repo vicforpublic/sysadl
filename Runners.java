@@ -9,6 +9,7 @@ import sysADL_Sintax.ForStatement;
 import sysADL_Sintax.IfBlockStatement;
 import sysADL_Sintax.IfStatement;
 import sysADL_Sintax.Statement;
+import sysADL_Sintax.SwitchClause;
 import sysADL_Sintax.SwitchStatement;
 import sysADL_Sintax.VariableDecl;
 import sysADL_Sintax.WhileStatement;
@@ -55,12 +56,16 @@ public class Runners extends SysADLStatementInterpreter{
 	@Override
 	public void run(ForStatement s, Map<String, Object> context) {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void run(SwitchStatement s, Map<String, Object> context) {
-		// TODO Auto-generated method stub
+		VariableDecl va = (VariableDecl) s.getControl().getVars().get(0);
+		run(va,context);
+		while(true) {
+			run(s.getBody(), context);
+			if( ! Boolean.valueOf(((Expression) s.getControl().getVars().get(1)).getValue()) ) {
+				break;
+			}
+			Expression st = ((Expression) s.getControl().getVars().get(2));
+			run(st, context);
+		}
 		
 	}
 
@@ -82,7 +87,20 @@ public class Runners extends SysADLStatementInterpreter{
 			run(s.getElse().getBody(), context);
 				
 		}
+	}
+
+	@Override
+	public void run(SwitchStatement s, Map<String, Object> context) {
+		// TODO Auto-generated method stub
+		String a = s.getExpr().getValue();
 		
+		for (Object o : s.getClauses()) {
+			SwitchClause clause = (SwitchClause) o;
+			if(a.equals(clause.getValue().getValue())) {	
+				run(clause.getBody(), context);
+				break;
+			}
+		}
 	}
 
 }
