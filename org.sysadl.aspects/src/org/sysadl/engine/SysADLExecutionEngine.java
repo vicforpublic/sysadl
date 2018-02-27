@@ -1,4 +1,4 @@
-package org.sysadl.aspects;
+package org.sysadl.engine;
 
 import org.eclipse.emf.common.util.EList;
 import org.sysad.execution.expression.ExpressionEvaluator;
@@ -7,11 +7,11 @@ import org.sysadl.context.SysADLContext;
 import org.sysadl.context.exceptions.ContextException;
 import org.sysadl.execution.StatementsInterpreterImpl;
 
-import sysADL_Sintax.Executable;
-import sysADL_Sintax.Expression;
-import sysADL_Sintax.NameExpression;
-import sysADL_Sintax.ReturnStatement;
-import sysADL_Sintax.Statement;
+import org.sysadl.Executable;
+import org.sysadl.Expression;
+import org.sysadl.NameExpression;
+import org.sysadl.ReturnStatement;
+import org.sysadl.Statement;
 
 /**
  * 

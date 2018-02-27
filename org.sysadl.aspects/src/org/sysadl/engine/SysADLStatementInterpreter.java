@@ -1,20 +1,19 @@
-package org.sysadl.aspects;
+package org.sysadl.engine;
 
-import java.util.Map;
 
 import org.sysadl.context.SysADLContext;
 import org.sysadl.context.exceptions.ContextException;
 
-import sysADL_Sintax.BlockStatement;
-import sysADL_Sintax.DoStatement;
-import sysADL_Sintax.Expression;
-import sysADL_Sintax.ForStatement;
-import sysADL_Sintax.IfBlockStatement;
-import sysADL_Sintax.ReturnStatement;
-import sysADL_Sintax.Statement;
-import sysADL_Sintax.SwitchStatement;
-import sysADL_Sintax.VariableDecl;
-import sysADL_Sintax.WhileStatement;
+import org.sysadl.BlockStatement;
+import org.sysadl.DoStatement;
+import org.sysadl.Expression;
+import org.sysadl.ForStatement;
+import org.sysadl.IfBlockStatement;
+import org.sysadl.ReturnStatement;
+import org.sysadl.Statement;
+import org.sysadl.SwitchStatement;
+import org.sysadl.VariableDecl;
+import org.sysadl.WhileStatement;
 
 /**
  * SysADL Statement Interpreter

@@ -2,17 +2,13 @@ package org.sysadl.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.sysadl.aspects.SysADLStatementInterpreter;
 import org.sysadl.context.SysADLContext;
 import org.sysadl.context.exceptions.ContextInvalidKey;
 import org.sysadl.context.impl.SysADLContextImpl;
+import org.sysadl.engine.SysADLStatementInterpreter;
 
-import sysADL_Sintax.NamedElement;
 import sysADL_Sintax.SysADLFactory;
 import sysADL_Sintax.TypeDef;
 import sysADL_Sintax.TypeUse;

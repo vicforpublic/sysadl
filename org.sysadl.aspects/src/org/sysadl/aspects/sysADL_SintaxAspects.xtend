@@ -1,4 +1,4 @@
-package org.sysadl.sysADL_Sintax.aspects
+package org.sysadl.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.Main
@@ -6,16 +6,16 @@ import org.eclipse.emf.common.util.EList
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 import org.eclipse.emf.common.util.BasicEList
-import sysADL_Sintax.ActivityBody
-import sysADL_Sintax.ActivityDef
-import sysADL_Sintax.Pin
-import sysADL_Sintax.ActivityDelegation
-import sysADL_Sintax.ActionUse
-import sysADL_Sintax.DataObject
-import sysADL_Sintax.ActivityFlowable
-import sysADL_Sintax.ActivityRelation
-import sysADL_Sintax.ActivityFlow
-import sysADL_Sintax.NamedElement
+import org.sysadl.ActivityBody
+import org.sysadl.ActivityDef
+import org.sysadl.Pin
+import org.sysadl.ActivityDelegation
+import org.sysadl.ActionUse
+import org.sysadl.DataObject
+import org.sysadl.ActivityFlowable
+import org.sysadl.ActivityRelation
+import org.sysadl.ActivityFlow
+import org.sysadl.NamedElement
 
 @Aspect(className=ActivityBody)
 class ActivityBodyAspect {
@@ -66,7 +66,7 @@ class ActivityBodyAspect {
 	 * - Action Run: An Action has all data it needs and will execute
 	 * - Data: A data is provided by a DataObject 
 	 */
-	@Step
+	 @Step
 	def void step() {
 		// Transmit the values over the flows and delegations
 		val act = _self.eContainer.eContainer as ActivityDef
@@ -175,7 +175,7 @@ abstract class DataObjectAspect extends ActivityFlowableAspect {
 	@Step
 	def void run() {
 		// TODO implement me
-		_self.cvalue = Helper.genValue()
+		_self.lue = Helper.genValue()
 	}
 }
 		

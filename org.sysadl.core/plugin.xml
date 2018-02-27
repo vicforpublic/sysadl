@@ -11,7 +11,15 @@
       <package
             uri="com.sysADL_Sintax"
             class="sysADL_Sintax.SysADLPackage"
-            genModel="model/sysADL_Sintax.genmodel"/>
+            genModel="model/sysadl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated org.sysadl.core -->
+      <package
+            uri="org.sysadl"
+            class="org.sysadl.SysADLPackage"
+            genModel="model/sysadl.genmodel"/>
    </extension>
 
 </plugin>
