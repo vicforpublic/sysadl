@@ -62,6 +62,9 @@ public class SysADLFormatter extends AbstractDeclarativeFormatter {
 			c.setLinewrap().before(ports);
 			c.setLinewrap().after(ports);
 		}
+		for(Keyword delegate: f.findKeywords("delegate")) {
+			c.setLinewrap().before(delegate);
+		}
 		for(Keyword bindings: f.findKeywords("bindings")) {
 			//c.setLinewrap().before(bindings);
 			//c.setLinewrap().after(bindings);
